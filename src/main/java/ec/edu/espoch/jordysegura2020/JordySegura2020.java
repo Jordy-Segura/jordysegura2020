@@ -39,7 +39,7 @@ public class JordySegura2020 {
 
         int menu = 0;
 
-        while (menu!=5) {
+        while (menu != 5) {
             System.out.println("");
             System.out.println("\n-----INGRESE UNA OPCION DEL 1-5.-----");
             System.out.println("1.  CALCULAR TOTAL DE VENTAS DE LA SEMANA.");
@@ -64,10 +64,15 @@ public class JordySegura2020 {
                     System.out.println("El promedio es: " + totalVentas);
 
                     float diferenciaMinima = 0;
-                    for (int j = 0; j < 7; j++) {
+                    int diacercano=0;
+                    for (int j = 1; j < 7; j++) {
+                        float diferenciaActual = (ventasDiarias[j] - totalVentas);
+                        if (diferenciaActual < diferenciaMinima) {
+                            diferenciaMinima = diferenciaActual;
+                            diacercano = j;
+                        }
                     }
-                    System.out.println("");
-                    
+                    System.out.println("El día más cercano es el día: " +diacercano);
                     break;
                 case 3:
                     ventaAlta = 0;
